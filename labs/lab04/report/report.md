@@ -106,16 +106,16 @@ header-includes:
 Для работы с Node.js добавим каталог с исполняемыми файлами, 
 устанавливаемыми yarn, в переменную PATH.
 
-![Node.js](image/01.png){ #fig:001 width=70% height=70% }
+![Node.js](image/1.png){ #fig:001 width=70% height=70% }
 
 Программа commitizen используется для помощи в форматировании коммитов.
 При этом устанавливается скрипт git-cz, который мы и будем использовать для коммитов.
 
-![установка commitizen](image/02.png){ #fig:002 width=70% height=70% }
+![установка commitizen](image/2.png){ #fig:002 width=70% height=70% }
 
 Программа standard-changelog используется для помощи в создании логов.
 
-![установка standard-changelog](image/03.png){ #fig:003 width=70% height=70% }
+![установка standard-changelog](image/3.png){ #fig:003 width=70% height=70% }
 
 Делаем первый коммит и выкладываем на github.
 
@@ -123,7 +123,7 @@ header-includes:
 
 Таким образом, файл package.json приобретает вид:
 
-![package.json](image/04.png){ #fig:004 width=70% height=70% }
+![package.json](image/4.png){ #fig:004 width=70% height=70% }
 
 Добавим новые файлы.
 
@@ -131,7 +131,7 @@ header-includes:
 
 Отправим на github.
 
-![Отправка](image/05.png){ #fig:005 width=70% height=70% }
+![Отправка](image/5.png){ #fig:005 width=70% height=70% }
 
 Инициализируем git-flow
 
@@ -139,7 +139,7 @@ header-includes:
 
 Загрузите весь репозиторий в хранилище
 
-![Инициализация и загрузка изменений](image/06.png){ #fig:006 width=70% height=70% }
+![Инициализация и загрузка изменений](image/6.png){ #fig:006 width=70% height=70% }
 
 Установите внешнюю ветку как вышестоящую для этой ветки
 
@@ -151,16 +151,16 @@ header-includes:
 
 Зальём релизную ветку в основную ветку
 
-![Завершение релиза](image/07.png){ #fig:007 width=70% height=70% }
+![Завершение релиза](image/7.png){ #fig:007 width=70% height=70% }
 
 Отправим данные на github
 
-![Отправка](image/08.png){ #fig:008 width=70% height=70% }
+![Отправка](image/8.png){ #fig:008 width=70% height=70% }
 
 Создадим ветку для новой функциональности
 По окончании разработки новой функциональности следующим шагом следует объединить ветку feature_branch c develop:
 
-![Объединение веток](image/09.png){ #fig:009 width=70% height=70% }
+![Объединение веток](image/9.png){ #fig:009 width=70% height=70% }
 
 Создадим релиз с версией 1.2.3
 
