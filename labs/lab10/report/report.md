@@ -2,7 +2,7 @@
 ## Front matter
 title: "Отчёт по лабораторной работе №10"
 subtitle: "Редактор Vi"
-author: "Амир Расули"
+author: "Бельчуг Александр Константинович"
 
 ## Generic otions
 lang: ru-RU
