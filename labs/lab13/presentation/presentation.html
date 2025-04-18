@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Бельчуг Алекссандр Константинович">
+  <title>Обзор архитектур распределенных систем и локальных сетей</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss" rel="stylesheet">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss" rel="stylesheet">
+  <style>
+.reveal .sourceCode { 
+overflow: visible;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" rel="stylesheet" id="theme">
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Обзор архитектур распределенных систем и локальных
+сетей</h1>
+  <p class="subtitle">Подробный анализ технологий, протоколов и
+современных тенденций</p>
+  <p class="author">Бельчуг Алекссандр Константинович</p>
+  <p class="institute">RUDN</p>
+  <p class="date">7 апреля 2025 год</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Содержание</h2>
+
+</nav>
+</section>
+
+<section>
+<section id="введение-в-распределенные-системы-и-локальные-сети" class="title-slide slide level1">
+<h1>Введение в распределенные системы и локальные сети</h1>
+
+</section>
+<section id="определение-и-ключевые-характеристики" class="slide level2">
+<h2>Определение и ключевые характеристики</h2>
+<p><strong>Распределенная система</strong> представляет собой комплекс
+автономных вычислительных узлов, которые взаимодействуют между собой
+посредством передачи сообщений. Для пользователя такая система выглядит
+как единое целое, несмотря на физическое распределение компонентов.
+Основные особенности: - Децентрализация управления - Параллельная
+обработка данных - Повышенная отказоустойчивость - Географическая
+распределенность</p>
+<p><strong>Локальная сеть (LAN - Local Area Network)</strong> - это
+сеть, ограниченная небольшой географической областью (здание, кампус).
+Характеристики: - Высокая скорость передачи данных (от 100 Мбит/с до 100
+Гбит/с) - Низкий уровень задержек - Использование преимущественно
+проводных технологий - Централизованное управление в большинстве
+случаев</p>
+</section>
+<section id="эволюция-сетевых-технологий" class="slide level2">
+<h2>Эволюция сетевых технологий</h2>
+<p>Современные сетевые архитектуры прошли значительный путь развития: 1.
+Мэйнфреймы (1960-е) 2. Первые локальные сети (1970-е) 3. Появление
+стандартов Ethernet (1980-е) 4. Развитие интернет-технологий (1990-е) 5.
+Облачные вычисления (2000-е) 6. Эра IoT и edge computing (2010-е)</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="подробный-анализ-архитектур-распределенных-систем" class="title-slide slide level1">
+<h1>Подробный анализ архитектур распределенных систем</h1>
+
+</section>
+<section id="облачные-архитектуры-модели-обслуживания" class="slide level2">
+<h2>Облачные архитектуры: модели обслуживания</h2>
+<p>Современные облачные платформы предлагают три основные модели:</p>
+<p><strong>IaaS (Infrastructure as a Service)</strong>: - Предоставление
+виртуальной инфраструктуры - Примеры: AWS EC2, Microsoft Azure VMs -
+Полный контроль над ОС и приложениями - Ответственность пользователя за
+безопасность данных</p>
+<p><strong>PaaS (Platform as a Service)</strong>: - Готовая среда для
+разработки и развертывания - Примеры: Heroku, Google App Engine -
+Автоматическое масштабирование - Упрощенное управление
+инфраструктурой</p>
+<p><strong>SaaS (Software as a Service)</strong>: - Готовые приложения
+через браузер - Примеры: Salesforce, Google Workspace - Минимальные
+требования к клиентскому оборудованию - Регулярные автоматические
+обновления</p>
+</section>
+<section id="одноранговые-сети-p2p-принципы-работы" class="slide level2">
+<h2>Одноранговые сети (P2P): принципы работы</h2>
+<p>P2P-архитектура характеризуется следующими особенностями: -
+Отсутствие выделенных серверов - Все узлы равноправны (peers) -
+Самоорганизующаяся структура - Примеры применения: - Файлообменные сети
+(BitTorrent) - Криптовалюты (Blockchain) - Распределенные вычисления
+(SETI@home)</p>
+<p>Преимущества: - Высокая отказоустойчивость - Масштабируемость -
+Экономия на инфраструктуре</p>
+<p>Недостатки: - Сложность обеспечения безопасности - Проблемы с
+производительностью - Юридические риски</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="детальное-рассмотрение-протоколов-локальных-сетей" class="title-slide slide level1">
+<h1>Детальное рассмотрение протоколов локальных сетей</h1>
+
+</section>
+<section id="ethernet-эволюция-стандартов" class="slide level2">
+<h2>Ethernet: эволюция стандартов</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Версия</th>
+<th>Год</th>
+<th>Скорость</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ethernet</td>
+<td>1980</td>
+<td>10 Мбит/с</td>
+<td>Коаксиальный кабель</td>
+</tr>
+<tr class="even">
+<td>Fast Ethernet</td>
+<td>1995</td>
+<td>100 Мбит/с</td>
+<td>Витая пара CAT5</td>
+</tr>
+<tr class="odd">
+<td>Gigabit Ethernet</td>
+<td>1999</td>
+<td>1 Гбит/с</td>
+<td>Полнодуплексный режим</td>
+</tr>
+<tr class="even">
+<td>10 GigE</td>
+<td>2002</td>
+<td>10 Гбит/с</td>
+<td>Оптоволокно</td>
+</tr>
+<tr class="odd">
+<td>Terabit Ethernet</td>
+<td>2017</td>
+<td>400 Гбит/с</td>
+<td>ЦОД применение</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wi-fi-поколения-беспроводных-технологий" class="slide level2">
+<h2>Wi-Fi: поколения беспроводных технологий</h2>
+<p><strong>802.11ax (Wi-Fi 6)</strong>: - Поддержка OFDMA - Увеличение
+плотности подключений - Скорость до 9.6 Гбит/с - Улучшенная
+энергоэффективность</p>
+<p><strong>802.11be (Wi-Fi 7)</strong> (ожидается в 2024): - Каналы 320
+МГц - Multi-Link Operation - Скорость до 46 Гбит/с - Снижение
+задержек</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="углубленный-анализ-проблем-распределенных-систем" class="title-slide slide level1">
+<h1>Углубленный анализ проблем распределенных систем</h1>
+
+</section>
+<section id="теорема-cap-практические-последствия" class="slide level2">
+<h2>Теорема CAP: практические последствия</h2>
+<p>Теорема CAP (Brewer’s theorem) утверждает, что распределенная система
+может одновременно обеспечивать только два из трех свойств:</p>
+<ol type="1">
+<li><strong>Согласованность (Consistency)</strong> - все узлы видят одни
+и те же данные в один момент времени</li>
+<li><strong>Доступность (Availability)</strong> - система всегда
+возвращает ответ на запрос</li>
+<li><strong>Устойчивость к разделению (Partition tolerance)</strong> -
+система продолжает работать при потере связи между узлами</li>
+</ol>
+<p>Практические реализации: - <strong>CA</strong> системы: традиционные
+RDBMS (Oracle, MySQL) - <strong>CP</strong> системы: MongoDB, Redis -
+<strong>AP</strong> системы: Cassandra, DynamoDB</p>
+</section>
+<section id="методы-обеспечения-отказоустойчивости" class="slide level2">
+<h2>Методы обеспечения отказоустойчивости</h2>
+<ol type="1">
+<li><strong>Репликация данных</strong>:
+<ul>
+<li>Master-slave</li>
+<li>Multi-master</li>
+<li>Кворумные записи</li>
+</ul></li>
+<li><strong>Разделение на зоны доступности</strong>:
+<ul>
+<li>Географическое распределение</li>
+<li>Независимые инфраструктуры</li>
+</ul></li>
+<li><strong>Circuit breakers</strong>:
+<ul>
+<li>Автоматическое отключение нерабочих компонентов</li>
+<li>Паттерн “Bulkhead”</li>
+</ul></li>
+<li><strong>Мониторинг и самовосстановление</strong>:
+<ul>
+<li>Health checks</li>
+<li>Автоматический перезапуск</li>
+</ul></li>
+</ol>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="перспективные-направления-развития" class="title-slide slide level1">
+<h1>Перспективные направления развития</h1>
+
+</section>
+<section id="edge-computing-архитектурные-изменения" class="slide level2">
+<h2>Edge Computing: архитектурные изменения</h2>
+<p>Переход от централизованной облачной модели к распределенной: -
+Обработка данных на границе сети - Уменьшение задержек - Снижение
+нагрузки на каналы связи - Примеры применения: - Автономные транспортные
+средства - Промышленный IoT - Умные города</p>
+</section>
+<section id="квантовые-сети-будущее-коммуникаций" class="slide level2">
+<h2>Квантовые сети: будущее коммуникаций</h2>
+<p>Перспективные разработки: - Квантовая криптография - Запутанные
+фотоны для передачи данных - Квантовые повторители - Протоколы квантовой
+телепортации</p>
+<p>Ожидаемые преимущества: - Абсолютная безопасность - Мгновенная
+передача информации - Новые парадигмы вычислений</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="заключение-и-выводы" class="title-slide slide level1">
+<h1>Заключение и выводы</h1>
+
+</section>
+<section id="ключевые-тезисы" class="slide level2">
+<h2>Ключевые тезисы</h2>
+<ol type="1">
+<li>Современные распределенные системы обеспечивают:
+<ul>
+<li>Глобальную масштабируемость</li>
+<li>Высокую доступность</li>
+<li>Гибкость развертывания</li>
+</ul></li>
+<li>Локальные сети эволюционируют в направлении:
+<ul>
+<li>Повышения пропускной способности</li>
+<li>Уменьшения задержек</li>
+<li>Улучшения энергоэффективности</li>
+</ul></li>
+<li>Основные технологические тренды:
+<ul>
+<li>Гибридные облачные среды</li>
+<li>Распределенная обработка данных (Edge)</li>
+<li>Программно-определяемые сети</li>
+</ul></li>
+</ol>
+</section>
+<section id="рекомендации-по-внедрению" class="slide level2">
+<h2>Рекомендации по внедрению</h2>
+<p>Для организаций, планирующих модернизацию: 1. Провести аудит
+существующей инфраструктуры 2. Определить критические требования
+(задержки, безопасность) 3. Рассмотреть гибридные архитектуры 4. Обучить
+персонал новым технологиям 5. Внедрить систему мониторинга и
+аналитики</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
