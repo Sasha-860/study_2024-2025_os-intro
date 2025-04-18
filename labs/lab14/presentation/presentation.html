@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Гасанов Абакар Исламович">
+  <title>Методы сетевых соединений</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss" rel="stylesheet">
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss" rel="stylesheet">
+  <style>
+.reveal .sourceCode { 
+overflow: visible;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <link href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" rel="stylesheet" id="theme">
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Методы сетевых соединений</h1>
+  <p class="subtitle">Комплексный анализ технологий и протоколов
+передачи данных</p>
+  <p class="author">Гасанов Абакар Исламович</p>
+  <p class="institute">RUDN</p>
+  <p class="date">7 апреля 2025 года</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Содержание</h2>
+
+</nav>
+</section>
+
+<section>
+<section id="введение-в-методы-сетевых-соединений" class="title-slide slide level1">
+<h1>Введение в методы сетевых соединений</h1>
+
+</section>
+<section id="базовые-концепции-сетевых-соединений" class="slide level2">
+<h2>Базовые концепции сетевых соединений</h2>
+<p><strong>Сетевое соединение</strong> - это логическая или физическая
+связь между двумя и более устройствами для обмена данными. Основные
+характеристики:</p>
+<ul>
+<li><strong>Тип соединения</strong>: точка-точка, многоточечное,
+широковещательное</li>
+<li><strong>Режим передачи</strong>: симплексный, полудуплексный,
+полнодуплексный</li>
+<li><strong>Метод доступа</strong>: детерминированный, случайный,
+гибридный</li>
+<li><strong>Топология</strong>: звезда, кольцо, шина, сетка, дерево</li>
+</ul>
+</section>
+<section id="классификация-сетевых-соединений" class="slide level2">
+<h2>Классификация сетевых соединений</h2>
+<ol type="1">
+<li><strong>По физической среде</strong>:
+<ul>
+<li>Проводные (медные, оптоволоконные)</li>
+<li>Беспроводные (радио, ИК, лазер)</li>
+<li>Виртуальные (VPN, туннели)</li>
+</ul></li>
+<li><strong>По масштабу</strong>:
+<ul>
+<li>PAN (Personal Area Network)</li>
+<li>LAN (Local Area Network)</li>
+<li>MAN (Metropolitan Area Network)</li>
+<li>WAN (Wide Area Network)</li>
+</ul></li>
+</ol>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="проводные-методы-соединения" class="title-slide slide level1">
+<h1>Проводные методы соединения</h1>
+
+</section>
+<section id="технологии-ethernet" class="slide level2">
+<h2>Технологии Ethernet</h2>
+<h3 id="стандарты-ethernet-ieee-802.3">Стандарты Ethernet (IEEE
+802.3)</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 23%" />
+<col style="width: 15%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Тип</th>
+<th>Кабель</th>
+<th>Макс. расстояние</th>
+<th>Скорость</th>
+<th>Применение</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10BASE-T</td>
+<td>UTP Cat3</td>
+<td>100 м</td>
+<td>10 Мбит/с</td>
+<td>Устаревшие сети</td>
+</tr>
+<tr class="even">
+<td>100BASE-TX</td>
+<td>UTP Cat5</td>
+<td>100 м</td>
+<td>100 Мбит/с</td>
+<td>Офисные сети</td>
+</tr>
+<tr class="odd">
+<td>1000BASE-T</td>
+<td>UTP Cat5e</td>
+<td>100 м</td>
+<td>1 Гбит/с</td>
+<td>Современные LAN</td>
+</tr>
+<tr class="even">
+<td>10GBASE-T</td>
+<td>UTP Cat6a</td>
+<td>100 м</td>
+<td>10 Гбит/с</td>
+<td>ЦОД, магистрали</td>
+</tr>
+<tr class="odd">
+<td>40GBASE-SR4</td>
+<td>OM3 MMF</td>
+<td>100 м</td>
+<td>40 Гбит/с</td>
+<td>Высокоскоростные соединения</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="оптоволоконные-технологии" class="slide level2">
+<h2>Оптоволоконные технологии</h2>
+<p><strong>Преимущества оптоволокна</strong>: - Высокая
+помехозащищенность - Большие расстояния (до 80 км без повторителей) -
+Высокая пропускная способность (до 400 Гбит/с) - Безопасность
+передачи</p>
+<p><strong>Типы соединений</strong>: - <strong>SC</strong> - стандартный
+квадратный разъем - <strong>LC</strong> - компактный вариант -
+<strong>ST</strong> - байонетное соединение - <strong>MTP/MPO</strong> -
+для высокоплотных соединений</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="беспроводные-методы-соединения" class="title-slide slide level1">
+<h1>Беспроводные методы соединения</h1>
+
+</section>
+<section id="технологии-wi-fi-ieee-802.11" class="slide level2">
+<h2>Технологии Wi-Fi (IEEE 802.11)</h2>
+<h3 id="сравнение-стандартов-wi-fi">Сравнение стандартов Wi-Fi</h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 8%" />
+<col style="width: 15%" />
+<col style="width: 20%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Стандарт</th>
+<th>Год</th>
+<th>Частота</th>
+<th>Макс. скорость</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>802.11a</td>
+<td>1999</td>
+<td>5 ГГц</td>
+<td>54 Мбит/с</td>
+<td>Первый 5 ГГц стандарт</td>
+</tr>
+<tr class="even">
+<td>802.11g</td>
+<td>2003</td>
+<td>2.4 ГГц</td>
+<td>54 Мбит/с</td>
+<td>Обратная совместимость с 802.11b</td>
+</tr>
+<tr class="odd">
+<td>802.11n</td>
+<td>2009</td>
+<td>2.4/5 ГГц</td>
+<td>600 Мбит/с</td>
+<td>MIMO, 40 МГц каналы</td>
+</tr>
+<tr class="even">
+<td>802.11ac</td>
+<td>2013</td>
+<td>5 ГГц</td>
+<td>6.77 Гбит/с</td>
+<td>MU-MIMO, 160 МГц каналы</td>
+</tr>
+<tr class="odd">
+<td>802.11ax</td>
+<td>2019</td>
+<td>2.4/5/6 ГГц</td>
+<td>9.6 Гбит/с</td>
+<td>Wi-Fi 6, OFDMA, TWT</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="сотовые-технологии-5g" class="slide level2">
+<h2>Сотовые технологии 5G</h2>
+<p><strong>Ключевые особенности 5G</strong>: - Три диапазона работы: -
+<strong>Low-band</strong> (&lt;1 ГГц) - широкое покрытие -
+<strong>Mid-band</strong> (1-6 ГГц) - баланс покрытия/скорости -
+<strong>High-band</strong> (24-100 ГГц) - сверхвысокие скорости -
+Технологии: - Massive MIMO (до 256 антенн) - Beamforming (формирование
+луча) - Network slicing (виртуальные сети)</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="специализированные-методы-соединения" class="title-slide slide level1">
+<h1>Специализированные методы соединения</h1>
+
+</section>
+<section id="industrial-ethernet" class="slide level2">
+<h2>Industrial Ethernet</h2>
+<p><strong>Протоколы для автоматизации</strong>: -
+<strong>PROFINET</strong> - реального времени для промышленности -
+<strong>EtherCAT</strong> - эффективная передача данных - <strong>Modbus
+TCP</strong> - интеграция с legacy-системами -
+<strong>Powerlink</strong> - детерминированная передача</p>
+<p><strong>Особенности</strong>: - Детерминированное время отклика -
+Устойчивость к помехам - Поддержка кольцевых топологий - Горячая замена
+компонентов</p>
+</section>
+<section id="высокопроизводительные-соединения" class="slide level2">
+<h2>Высокопроизводительные соединения</h2>
+<p><strong>Технологии для ЦОД</strong>: - <strong>InfiniBand</strong>: -
+Скорость до 400 Гбит/с - Низкие задержки (&lt;1 мкс) - RDMA (прямой
+доступ к памяти)</p>
+<ul>
+<li><strong>Fibre Channel</strong>:
+<ul>
+<li>Для SAN (Storage Area Networks)</li>
+<li>Протоколы FCP, FCoE</li>
+<li>Гарантированная пропускная способность</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="виртуальные-методы-соединения" class="title-slide slide level1">
+<h1>Виртуальные методы соединения</h1>
+
+</section>
+<section id="технологии-vpn" class="slide level2">
+<h2>Технологии VPN</h2>
+<p><strong>Типы VPN</strong>: 1. <strong>По уровню OSI</strong>: -
+SSL/TLS VPN (уровень приложений) - IPsec VPN (сетевой уровень) - L2TP
+(канальный уровень)</p>
+<ol start="2" type="1">
+<li><strong>По назначению</strong>:
+<ul>
+<li>Remote Access VPN</li>
+<li>Site-to-Site VPN</li>
+<li>Extranet VPN</li>
+</ul></li>
+</ol>
+<p><strong>Криптографические протоколы</strong>: - IKEv2/IPsec - OpenVPN
+- WireGuard - SSTP</p>
+</section>
+<section id="программно-определяемые-сети-sdn" class="slide level2">
+<h2>Программно-определяемые сети (SDN)</h2>
+<p><strong>Архитектура SDN</strong>: 1. <strong>Уровень данных</strong>
+(Data Plane) - коммутаторы 2. <strong>Уровень управления</strong>
+(Control Plane) - контроллер 3. <strong>Уровень приложений</strong>
+(Application Plane)</p>
+<p><strong>Преимущества</strong>: - Централизованное управление -
+Программируемость сети - Виртуализация сетевых функций - Автоматизация
+конфигурации</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="сравнение-методов-соединений" class="title-slide slide level1">
+<h1>Сравнение методов соединений</h1>
+
+</section>
+<section id="критерии-выбора-технологии" class="slide level2">
+<h2>Критерии выбора технологии</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Критерий</th>
+<th>Проводные</th>
+<th>Беспроводные</th>
+<th>Виртуальные</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Скорость</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>★★★</td>
+</tr>
+<tr class="even">
+<td>Надежность</td>
+<td>★★★★★</td>
+<td>★★★</td>
+<td>★★★★</td>
+</tr>
+<tr class="odd">
+<td>Мобильность</td>
+<td>★</td>
+<td>★★★★★</td>
+<td>★★★★★</td>
+</tr>
+<tr class="even">
+<td>Безопасность</td>
+<td>★★★★</td>
+<td>★★</td>
+<td>★★★★★</td>
+</tr>
+<tr class="odd">
+<td>Стоимость</td>
+<td>★★★</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+</tr>
+<tr class="even">
+<td>Масштабируемость</td>
+<td>★★★</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="рекомендации-по-применению" class="slide level2">
+<h2>Рекомендации по применению</h2>
+<ol type="1">
+<li><strong>Офисная среда</strong>:
+<ul>
+<li>Gigabit Ethernet + Wi-Fi 6</li>
+<li>VLAN для сегментации</li>
+<li>VPN для удаленного доступа</li>
+</ul></li>
+<li><strong>Промышленные объекты</strong>:
+<ul>
+<li>Industrial Ethernet (PROFINET)</li>
+<li>Защищенные беспроводные решения</li>
+<li>Кольцевые топологии</li>
+</ul></li>
+<li><strong>ЦОД и облака</strong>:
+<ul>
+<li>100GbE и InfiniBand</li>
+<li>SDN для управления</li>
+<li>VXLAN для виртуализации</li>
+</ul></li>
+</ol>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="заключение-и-перспективы" class="title-slide slide level1">
+<h1>Заключение и перспективы</h1>
+
+</section>
+<section id="тенденции-развития" class="slide level2">
+<h2>Тенденции развития</h2>
+<ol type="1">
+<li><strong>Конвергенция технологий</strong>:
+<ul>
+<li>Wi-Fi 6 и 5G</li>
+<li>Ethernet и TSN (Time-Sensitive Networking)</li>
+<li>SD-WAN и традиционные WAN</li>
+</ul></li>
+<li><strong>Новые парадигмы</strong>:
+<ul>
+<li>Intent-Based Networking</li>
+<li>AI-Driven Network Management</li>
+<li>Quantum Networking</li>
+</ul></li>
+<li><strong>Энергоэффективность</strong>:
+<ul>
+<li>Green Ethernet</li>
+<li>Adaptive Power Management</li>
+<li>Low-Power WAN (LPWAN)</li>
+</ul></li>
+</ol>
+</section>
+<section id="выводы" class="slide level2">
+<h2>Выводы</h2>
+<ol type="1">
+<li>Выбор метода соединения зависит от конкретных требований:
+<ul>
+<li>Производительность</li>
+<li>Безопасность</li>
+<li>Бюджет</li>
+<li>Масштаб</li>
+</ul></li>
+<li>Современные сети требуют гибридных подходов</li>
+<li>Виртуализация становится стандартом</li>
+<li>Автоматизация управления критически важна</li>
+</ol>
+</section></section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
